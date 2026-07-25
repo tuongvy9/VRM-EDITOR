@@ -1,30 +1,26 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>VRM Editor</title>
 
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<header>
+<header class="topbar">
 
-<div class="logo">
+<button id="menuBtn">☰</button>
+
+<div class="title">
 VRM Editor
 </div>
 
-<nav>
-
-<button id="openVRM">Open VRM</button>
-
-<button id="exportVRM">Export</button>
-
-<button id="resetCamera">Reset Camera</button>
+<div class="actions">
 
 <input
 type="file"
@@ -32,58 +28,63 @@ id="vrmFile"
 accept=".vrm"
 hidden>
 
-</nav>
+<button id="openVRM">
+Open
+</button>
 
-</header>
-
-<div class="editor">
-
-<!-- Scene -->
-
-<aside class="left">
-
-<h3>Scene</h3>
-
-<div id="meshList">
-
-No Model
+<button id="exportVRM" disabled>
+Export
+</button>
 
 </div>
 
-</aside>
+</header>
 
-<!-- Viewport -->
-
-<main class="viewport">
+<div class="viewer">
 
 <canvas id="canvas"></canvas>
 
 <div id="loading">
-
-Load VRM
+Drop VRM Here
+</div>
 
 </div>
 
-</main>
+<div class="tabs">
 
-<!-- Inspector -->
+<button class="tab active">
+Mesh
+</button>
 
-<aside class="right">
+<button class="tab">
+Texture
+</button>
 
-<h3>Inspector</h3>
+<button class="tab">
+Material
+</button>
 
-<div id="inspector">
+<button class="tab">
+BlendShape
+</button>
 
-Select a Mesh
+<button class="tab">
+Expression
+</button>
 
 </div>
 
-</aside>
+<div class="panel">
+
+<div id="panelContent">
+
+Open a VRM Model
+
+</div>
 
 </div>
 
 <script type="module" src="script.js"></script>
 
 </body>
-
-</
+</html>
