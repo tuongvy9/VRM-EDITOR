@@ -7,7 +7,7 @@ font-family:Arial,sans-serif;
 
 body{
 
-background:#1d1d1d;
+background:#181818;
 color:white;
 
 height:100vh;
@@ -19,36 +19,39 @@ overflow:hidden;
 
 }
 
-header{
+/* ===== Top Bar ===== */
 
-height:55px;
+.topbar{
 
-background:#2a2a2a;
+height:56px;
 
 display:flex;
 
-justify-content:space-between;
-
 align-items:center;
 
-padding:0 15px;
+justify-content:space-between;
 
-border-bottom:1px solid #444;
+padding:0 12px;
+
+background:#242424;
+
+border-bottom:1px solid #333;
 
 }
 
-.logo{
+.title{
 
-font-size:22px;
+font-size:20px;
+
 font-weight:bold;
 
 }
 
-nav{
+.actions{
 
 display:flex;
 
-gap:10px;
+gap:8px;
 
 }
 
@@ -60,51 +63,25 @@ border:none;
 
 color:white;
 
-padding:8px 15px;
+padding:8px 14px;
 
-border-radius:6px;
+border-radius:8px;
 
-cursor:pointer;
+font-size:14px;
 
 }
 
-.editor{
+button:disabled{
+
+opacity:.5;
+
+}
+
+/* ===== Viewport ===== */
+
+.viewer{
 
 flex:1;
-
-display:grid;
-
-grid-template-columns:240px 1fr 300px;
-
-overflow:hidden;
-
-}
-
-.left{
-
-background:#242424;
-
-border-right:1px solid #444;
-
-overflow:auto;
-
-padding:12px;
-
-}
-
-.right{
-
-background:#242424;
-
-border-left:1px solid #444;
-
-overflow:auto;
-
-padding:12px;
-
-}
-
-.viewport{
 
 position:relative;
 
@@ -132,41 +109,95 @@ left:50%;
 
 transform:translate(-50%,-50%);
 
-background:#000c;
+padding:14px 22px;
 
-padding:20px;
+background:#000a;
 
 border-radius:10px;
 
-font-size:20px;
+}
+
+/* ===== Tabs ===== */
+
+.tabs{
+
+height:56px;
+
+display:flex;
+
+overflow-x:auto;
+
+background:#202020;
+
+border-top:1px solid #333;
 
 }
 
-h3{
+.tab{
 
-margin-bottom:15px;
+flex:1;
 
-}
+min-width:100px;
 
-@media(max-width:900px){
+background:none;
 
-.editor{
+border:none;
 
-grid-template-columns:180px 1fr;
+color:white;
 
-}
-
-.right{
-
-display:none;
+font-size:15px;
 
 }
 
+.tab.active{
+
+background:#3b82f6;
+
 }
 
-@media(max-width:700px){
+/* ===== Panel ===== */
 
-.editor{
+.panel{
+
+height:180px;
+
+overflow:auto;
+
+background:#262626;
+
+padding:12px;
+
+}
+
+/* ===== Desktop ===== */
+
+@media(min-width:900px){
+
+body{
+
+display:grid;
+
+grid-template-rows:56px 1fr;
+
+}
+
+.viewer{
+
+grid-row:2;
+
+}
+
+.tabs{
+
+position:absolute;
+
+right:0;
+
+top:56px;
+
+width:260px;
+
+height:calc(100vh - 56px);
 
 display:flex;
 
@@ -174,22 +205,18 @@ flex-direction:column;
 
 }
 
-.left{
+.panel{
 
-height:180px;
+position:absolute;
 
-border-right:none;
+right:260px;
 
-border-bottom:1px solid #444;
+bottom:0;
 
-}
+width:320px;
 
-.viewport{
-
-flex:1;
-
-min-height:350px;
+height:300px;
 
 }
 
-}
+  }
