@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,11 +14,17 @@
 
 <header>
 
-<h1>VRM Editor</h1>
+<div class="logo">
+VRM Editor
+</div>
 
-<div class="toolbar">
+<nav>
 
-<label class="button">
+<button id="openVRM">Open VRM</button>
+
+<button id="exportVRM">Export</button>
+
+<button id="resetCamera">Reset Camera</button>
 
 <input
 type="file"
@@ -25,99 +32,58 @@ id="vrmFile"
 accept=".vrm"
 hidden>
 
-Load VRM
-
-</label>
-
-<button id="resetCamera">
-Reset Camera
-</button>
-
-</div>
+</nav>
 
 </header>
 
-<div id="container">
+<div class="editor">
 
-<!-- Sidebar -->
+<!-- Scene -->
 
-<aside id="sidebar">
+<aside class="left">
 
-<section>
-
-<h2>Meshes</h2>
+<h3>Scene</h3>
 
 <div id="meshList">
 
-<p>Chưa có model.</p>
+No Model
 
 </div>
-
-</section>
-
-<section>
-
-<h2>BlendShape</h2>
-
-<div id="blendShapeList">
-
-<p>Chưa có model.</p>
-
-</div>
-
-</section>
-
-<section>
-
-<h2>Texture</h2>
-
-<input
-type="file"
-id="textureInput"
-accept="image/*">
-
-<select id="materialSelect">
-
-<option>
-Chọn Material
-</option>
-
-</select>
-
-<button id="applyTexture">
-
-Apply Texture
-
-</button>
-
-</section>
 
 </aside>
 
-<!-- Viewer -->
+<!-- Viewport -->
 
-<main id="viewer">
+<main class="viewport">
 
 <canvas id="canvas"></canvas>
 
 <div id="loading">
 
-Drop hoặc Load một file VRM
+Load VRM
 
 </div>
 
 </main>
 
+<!-- Inspector -->
+
+<aside class="right">
+
+<h3>Inspector</h3>
+
+<div id="inspector">
+
+Select a Mesh
+
 </div>
 
-<footer>
+</aside>
 
-VRM Editor v1
-
-</footer>
+</div>
 
 <script type="module" src="script.js"></script>
 
 </body>
 
-                   </html>
+</
