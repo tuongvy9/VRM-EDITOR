@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VRM Editor</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+<h1>VRM Editor</h1>
+
+<div class="toolbar">
+
+<label class="button">
+
+<input
+type="file"
+id="vrmFile"
+accept=".vrm"
+hidden>
+
+Load VRM
+
+</label>
+
+<button id="resetCamera">
+Reset Camera
+</button>
+
+</div>
+
+</header>
+
+<div id="container">
+
+<!-- Sidebar -->
+
+<aside id="sidebar">
+
+<section>
+
+<h2>Meshes</h2>
+
+<div id="meshList">
+
+<p>Chưa có model.</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>BlendShape</h2>
+
+<div id="blendShapeList">
+
+<p>Chưa có model.</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Texture</h2>
+
+<input
+type="file"
+id="textureInput"
+accept="image/*">
+
+<select id="materialSelect">
+
+<option>
+Chọn Material
+</option>
+
+</select>
+
+<button id="applyTexture">
+
+Apply Texture
+
+</button>
+
+</section>
+
+</aside>
+
+<!-- Viewer -->
+
+<main id="viewer">
+
+<canvas id="canvas"></canvas>
+
+<div id="loading">
+
+Drop hoặc Load một file VRM
+
+</div>
+
+</main>
+
+</div>
+
+<footer>
+
+VRM Editor v1
+
+</footer>
+
+<script type="module" src="script.js"></script>
+
+</body>
+
+                   </html>
